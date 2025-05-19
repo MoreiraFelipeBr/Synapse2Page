@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Synapse AIOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #0A66C2;
+            --dark-blue: #1E3A8A;
+            --tech-cyan: #00D1D1;
+            --bg-dark: #121212;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Glassmorphism Effect */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--tech-cyan);
+            box-shadow: 0 8px 32px rgba(0, 209, 209, 0.2);
+        }
+
+        /* Navigation */
+        .services-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary-blue), var(--tech-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--tech-cyan);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .services-hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(10, 102, 194, 0.1), transparent);
+        }
+
+        .services-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, white, var(--tech-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .services-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Tabs Section */
+        .tabs-section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .tabs-container {
+            width: 100%;
+        }
+
+        .tab-header {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .tab-header::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            opacity: 1;
+        }
+
+        .tab-btn.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--tech-cyan);
+            animation: underline 0.3s ease-out;
+        }
+
+        @keyframes underline {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .service-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .detail-card {
+            padding: 1.5rem;
+        }
+
+        .detail-card h4 {
+            color: var(--tech-cyan);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .detail-card p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5% 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 1.5rem;
+            color: var(--tech-cyan);
+            font-size: 1.2rem;
+        }
+
+        .footer-col p, .footer-col a {
+            opacity: 0.9;
+            margin-bottom: 0.8rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--tech-cyan);
+        }
+
+        .copyright {
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .service-details {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-nav {
+                padding: 1rem 5%;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .services-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .tab-header {
+                flex-wrap: wrap;
+            }
+            
+            .tab-btn {
+                padding: 0.8rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="services-nav">
+        <a href="index.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
+        <div class="logo">Synapse AIOT</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <h1>Our Advanced Industrial Solutions</h1>
+        <p>End-to-end technologies for Industry 4.0 transformation</p>
+    </section>
+
+    <!-- Tabs Section -->
+    <section class="tabs-section">
+        <h2 class="section-title">Our Services</h2>
+        
+        <div class="tabs-container">
+            <!-- Tab Buttons -->
+            <div class="tab-header">
+                <button class="tab-btn active" data-tab="data-acquisition">Data Acquisition</button>
+                <button class="tab-btn" data-tab="data-organization">Data Organization</button>
+                <button class="tab-btn" data-tab="ai-analytics">AI & Analytics</button>
+                <button class="tab-btn" data-tab="data-viz">Data Visualization</button>
+                <button class="tab-btn" data-tab="agv-systems">AGV Systems</button>
+            </div>
+            
+            <!-- Tab 1 Content -->
+            <div class="tab-content active glass-card" id="data-acquisition">
+                <h3 class="service-title">🧠 Data Acquisition – Industrial IoT Integration</h3>
+                <p class="service-description">We connect sensors, PLCs, and machines using industrial-grade protocols like LoRaWAN, OPC UA, and MQTT. Our plug-and-play approach enables fast and scalable data collection from field devices to the cloud.</p>
+                
+                <div class="service-details">
+                    <div class="detail-card glass-card">
+                        <h4>Typical devices</h4>
+                        <p>UC300, WISE-2410, LT-22222-L, Advantech gateways</p>
+                    </div>
+                    <div class="detail-card glass-card">
+                        <h4>Result</h4>
+                        <p>Real-time data feeding MES, SCADA, and ERP systems</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 2 Content -->
+            <div class="tab-content glass-card" id="data-organization">
+                <h3 class="service-title">🔄 Data Organization – Unified Namespace & SQL Architecture</h3>
+                <p class="service-description">We design Unified Namespace (UNS) structures where every asset, tag, and process follows a standardized model. Data flows through MQTT brokers (e.g., HiveMQ), then into SQL environments and enterprise platforms like SAP, MES, or WMS.</p>
+                
+                <div class="service-details">
+                    <div class="detail-card glass-card">
+                        <h4>Key Benefit</h4>
+                        <p>UNS is the backbone of scalable IIoT and smart factory integration</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 3 Content -->
+            <div class="tab-content glass-card" id="ai-analytics">
+                <h3 class="service-title">⚙️ AI & Advanced Analytics – Predictive Maintenance & Soft Sensors</h3>
+                <p class="service-description">We monitor variables like vibration, temperature, and motor current using AI/ML models—including soft sensors and MIMO analysis—to detect anomalies early. With Edge AI (e.g., Jetson Nano), local processing reduces cloud dependency.</p>
+                
+                <div class="service-details">
+                    <div class="detail-card glass-card">
+                        <h4>Tech stack</h4>
+                        <p>Jetson Nano, Milesight sensors, SQL Server, Grafana</p>
+                    </div>
+                    <div class="detail-card glass-card">
+                        <h4>Use case</h4>
+                        <p>Reduce unplanned downtime, plan maintenance efficiently, and estimate hard-to-measure variables in real time</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 4 Content -->
+            <div class="tab-content glass-card" id="data-viz">
+                <h3 class="service-title">🌐 Data Visualization & Simulation – Digital Twin & Factory Analytics</h3>
+                <p class="service-description">We build digital twins of production lines that mirror real-world performance and layout. Coupled with real-time dashboards using Grafana, Power BI, and Node-RED, we deliver live metrics like speed, uptime, OEE—even with incomplete data.</p>
+                
+                <div class="service-details">
+                    <div class="detail-card glass-card">
+                        <h4>Example metric</h4>
+                        <p>OEE = (Good Count / Planned Count) × Availability × Performance × Quality</p>
+                    </div>
+                    <div class="detail-card glass-card">
+                        <h4>Use case</h4>
+                        <p>New line commissioning, live KPI monitoring, and simulation-based optimization</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tab 5 Content -->
+            <div class="tab-content glass-card" id="agv-systems">
+                <h3 class="service-title">🚚 AGV Call-Off Systems</h3>
+                <p class="service-description">Custom LoRa-based solutions that integrate pushbutton triggers, SQL logic, and SAP (or other fleet systems) to automate AGV tasks. Supports delivery, return, and exception flows.</p>
+                
+                <div class="service-details">
+                    <div class="detail-card glass-card">
+                        <h4>Use case</h4>
+                        <p>Automate raw material delivery, finished goods transport, and internal logistics in real time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Synapse AIOT</h3>
+                <p>Empowering Smart Manufacturing with AI & IoT</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>📧 contact@synapseaiot.com</p>
+                <p>📍 Based in Indiana, US, serving North & Latin America</p>
+            </div>
+            <div class="footer-col">
+                <h3>Explore</h3>
+                <a href="index.html">Home</a>
+                <a href="index.html#what-we-do">What We Do</a>
+                <a href="index.html#why-us">Why Us</a>
+                <a href="index.html#industries">Industries</a>
+            </div>
+        </div>
+        <p class="copyright">© 2023 Synapse AIOT. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Tab Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
