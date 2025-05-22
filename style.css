@@ -1,0 +1,454 @@
+:root {
+    --primary-blue: #1D4ED8;
+    --dark-blue: #0F172A;
+    --tech-cyan: #94A3B8;
+    --bg-dark: #121212;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: white;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+/* Navegação moderna com efeito glass */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0, 209, 209, 0.05), rgba(10, 102, 194, 0.1));
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--primary-blue);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.main-nav .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.main-nav .back-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--tech-cyan);
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.main-nav .back-link svg {
+  margin-right: 0.5rem;
+  stroke: var(--tech-cyan);
+  transition: stroke 0.3s ease;
+}
+
+.main-nav .back-link:hover {
+  color: var(--primary-blue);
+}
+
+.main-nav .back-link:hover svg {
+  stroke: var(--primary-blue);
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: var(--tech-cyan);
+    box-shadow: 0 8px 32px rgba(0, 209, 209, 0.2);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 5%;
+    overflow: hidden;
+}
+
+.tech-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-section .glass-container {
+    max-width: 800px;
+    padding: 3rem;
+    position: relative;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, white, var(--tech-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-blue), var(--tech-cyan));
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 15px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(10, 102, 194, 0.3);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--tech-cyan);
+    color: var(--tech-cyan);
+    padding: 10px 26px;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: rgba(0, 209, 209, 0.1);
+}
+
+/* What We Do Section */
+.what-we-do {
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.what-we-do h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.what-we-do p {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    opacity: 0.8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    padding: 2rem;
+    text-align: left;
+}
+
+.service-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    margin-bottom: 1rem;
+    color: var(--tech-cyan);
+}
+
+/* Why Us Section */
+.why-us {
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, rgba(10, 102, 194, 0.1), rgba(0, 209, 209, 0.05));
+}
+
+.why-us h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.benefits-list {
+    max-width: 700px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.benefits-list li {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.benefits-list li:before {
+    content: '✔️';
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Industries Section */
+.industries {
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.industries h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.logo-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding: 2rem 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    
+}
+
+.logo-item {
+    min-width: 250px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.logo-item:hover {
+    background: rgba(0, 209, 209, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Services Tabs */
+.detailed-services {
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, rgba(0, 209, 209, 0.05), rgba(10, 102, 194, 0.1));
+}
+
+.detailed-services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.tabs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab-header {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    opacity: 1;
+}
+
+.tab-btn.active:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--tech-cyan);
+    animation: underline 0.3s ease-out;
+}
+
+@keyframes underline {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.tab-content {
+    display: none;
+    padding: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Contact Section */
+.contact {
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    margin-bottom: 3rem;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.glass-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 3rem;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.glass-form input,
+.glass-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.glass-form input:focus,
+.glass-form textarea:focus {
+    outline: none;
+    border-color: var(--tech-cyan);
+    box-shadow: 0 0 0 2px rgba(0, 209, 209, 0.2);
+}
+
+.glass-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.glass-form button {
+    background: linear-gradient(45deg, var(--primary-blue), var(--tech-cyan));
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.glass-form button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(10, 102, 194, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .btn-primary, .btn-outline {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-header {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        text-align: left;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}
