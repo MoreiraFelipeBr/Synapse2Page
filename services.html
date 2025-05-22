@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Synapse AIOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="index.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
+        <div class="logo">Synapse AIOT</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="glass-container">            
+        <h1>Our Advanced Industrial Solutions</h1>
+        <p>End-to-end technologies for Industry 4.0 transformation</p>
+    </section>
+
+    <!-- Tabs Section -->
+    <!-- Detailed Services Section -->
+    <section class="detailed-services">
+        <h2>Our Services</h2>
+        <div class="tabs-container">
+            <div class="tab-header">
+                <button class="tab-btn active" data-tab="data-acquisition">Data Acquisition</button>
+                <button class="tab-btn" data-tab="data-organization">Data Organization</button>
+                <button class="tab-btn" data-tab="ai-analytics">AI & Analytics</button>
+                <button class="tab-btn" data-tab="data-viz">Data Visualization</button>
+                <button class="tab-btn" data-tab="agv-systems">AGV Systems</button>
+            </div>
+            
+            <div class="tab-content active" id="data-acquisition">
+                <h3>🧠 Data Acquisition – Industrial IoT Integration</h3>
+                <p>We connect sensors, PLCs, and machines using industrial-grade protocols like LoRaWAN, OPC UA, and MQTT. Our plug-and-play approach enables fast and scalable data collection from field devices to the cloud.</p>
+                <p><strong>Typical devices:</strong> UC300, WISE-2410, LT-22222-L, Advantech gateways</p>
+                <p><strong>Result:</strong> Real-time data feeding MES, SCADA, and ERP systems</p>
+            </div>
+            
+            <div class="tab-content" id="data-organization">
+                <h3>🔄 Data Organization – Unified Namespace & SQL Architecture</h3>
+                <p>We design Unified Namespace (UNS) structures where every asset, tag, and process follows a standardized model. Data flows through MQTT brokers (e.g., HiveMQ), then into SQL environments and enterprise platforms like SAP, MES, or WMS.</p>
+                <p><strong>Why it matters:</strong> UNS is the backbone of scalable IIoT and smart factory integration</p>
+            </div>
+            
+            <div class="tab-content" id="ai-analytics">
+                <h3>⚙️ AI & Advanced Analytics – Predictive Maintenance & Soft Sensors</h3>
+                <p>We monitor variables like vibration, temperature, and motor current using AI/ML models—including soft sensors and MIMO analysis—to detect anomalies early. With Edge AI (e.g., Jetson Nano), local processing reduces cloud dependency.</p>
+                <p><strong>Tech stack:</strong> Jetson Nano, Milesight sensors, SQL Server, Grafana</p>
+                <p><strong>Use case:</strong> Reduce unplanned downtime, plan maintenance efficiently, and estimate hard-to-measure variables in real time</p>
+            </div>
+            
+            <div class="tab-content" id="data-viz">
+                <h3>🌐 Data Visualization & Simulation – Digital Twin & Factory Analytics</h3>
+                <p>We build digital twins of production lines that mirror real-world performance and layout. Coupled with real-time dashboards using Grafana, Power BI, and Node-RED, we deliver live metrics like speed, uptime, OEE—even with incomplete data.</p>
+                <p><strong>Example metric:</strong> OEE = (Good Count / Planned Count) × Availability × Performance × Quality</p>
+                <p><strong>Use case:</strong> New line commissioning, live KPI monitoring, and simulation-based optimization</p>
+            </div>
+            
+            <div class="tab-content" id="agv-systems">
+                <h3>🚚 AGV Call-Off Systems</h3>
+                <p>Custom LoRa-based solutions that integrate pushbutton triggers, SQL logic, and SAP (or other fleet systems) to automate AGV tasks. Supports delivery, return, and exception flows.</p>
+                <p><strong>Use case:</strong> Automate raw material delivery, finished goods transport, and internal logistics in real time</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Let's bring your factory to the future.</h2>
+        <div class="contact-info">
+            <p>📧 contact@synapseaiot.com</p>
+            <p>📍 Based in Indiana, US, serving North & Latin America</p>
+        </div>
+        <form class="glass-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+           
+        </div>
+        <p class="copyright">© 2023 Synapse AIOT. All rights reserved.</p>
+    </footer>
+
+        <!-- JavaScript -->
+    <script>
+        // Tab Functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabId = btn.getAttribute('data-tab');
+                
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+    </script>
+    
+</body>
+</html>

@@ -1,7 +1,7 @@
 :root {
-    --primary-blue: #0A66C2;
-    --dark-blue: #1E3A8A;
-    --tech-cyan: #00D1D1;
+    --primary-blue: #1D4ED8;
+    --dark-blue: #0F172A;
+    --tech-cyan: #94A3B8;
     --bg-dark: #121212;
     --glass-bg: rgba(255, 255, 255, 0.05);
 }
@@ -23,6 +23,48 @@ body {
 h1, h2, h3, h4 {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
+}
+
+/* Navegação moderna com efeito glass */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0, 209, 209, 0.05), rgba(10, 102, 194, 0.1));
+  padding: 1rem 2rem;
+  border-bottom: 2px solid var(--primary-blue);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.main-nav .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.main-nav .back-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--tech-cyan);
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.main-nav .back-link svg {
+  margin-right: 0.5rem;
+  stroke: var(--tech-cyan);
+  transition: stroke 0.3s ease;
+}
+
+.main-nav .back-link:hover {
+  color: var(--primary-blue);
+}
+
+.main-nav .back-link:hover svg {
+  stroke: var(--primary-blue);
 }
 
 /* Glassmorphism Effect */
@@ -211,6 +253,7 @@ h1, h2, h3, h4 {
     padding: 2rem 0;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    
 }
 
 .logo-item {
