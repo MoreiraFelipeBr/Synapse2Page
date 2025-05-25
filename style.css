@@ -84,6 +84,7 @@ h1, h2, h3, h4 {
 }
 
 /* Hero Section */
+/* 
 .hero-section {
     min-height: 90vh;
     display: flex;
@@ -103,9 +104,17 @@ h1, h2, h3, h4 {
 }
 
 .hero-section .glass-container {
+    
+    align-items: center;
+    
     max-width: 800px;
     padding: 3rem;
     position: relative;
+}
+
+.hero-logo-img {
+    width: 50%;
+    
 }
 
 .hero-section h1 {
@@ -121,7 +130,7 @@ h1, h2, h3, h4 {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
-}
+} */
 
 /* Buttons */
 .btn-primary {

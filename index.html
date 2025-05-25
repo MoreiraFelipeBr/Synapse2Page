@@ -1,106 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Synapse AIOT | Smart Manufacturing Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="hero-style.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cards-style.css">
 </head>
+
 <body>
-    <!-- Hero Section -->
+
+    <!--  Hero Section -->
     <section class="hero-section">
+
         <div class="glass-container">
             <h1>Empowering Smart Manufacturing with AI & IoT</h1>
-            <p>Unlock efficiency, predict downtime, and drive real-time decisions with Synapse AIOT's integrated industrial solutions.</p>
+            <p>Unlock efficiency, predict downtime, and drive real-time decisions with Synapse AIOT's integrated
+                industrial solutions.</p>
+
             <div class="cta-buttons">
                 <button class="btn-primary">Request a Demo</button>
                 <a href="services.html" class="btn btn-outline">Learn More</a>
             </div>
+
+        </div>
+
+        <div class="hero-logo glass-container">
+            <img src="/img/logo-vert.png" alt="Synapse AIOT Logo" class="hero-logo-img">
+
         </div>
         <div class="tech-background">
             <canvas id="particles-js"></canvas>
         </div>
     </section>
 
-    <!-- What We Do Section -->
-    <section class="what-we-do">
+    <!-- cards -->
+
+    <section id="cards" data-scroll-effect>
         <h2>Smart Solutions for Industry 4.0</h2>
-        <p>At Synapse AIOT, we deliver advanced technologies to transform your factory floor. From data-driven decision making to predictive maintenance, we provide end-to-end solutions tailored to your operations.</p>
-        
-        <div class="services-grid">
-            <!-- Service 1 -->
-            <div class="service-card glass-card">
-                <div class="icon">🧠</div>
+        <p>At Synapse AIOT, we deliver advanced technologies to transform your factory floor. From data-driven
+            decisionmaking to predictive maintenance, we provide end-to-end solutions tailored to your operations.</p>
+
+        <div class="cards-container">
+
+            <div class="card glass-card">
+                <img src="img/card1.jpg" alt="Stay Ahead of Challenges and Future, Proof Your Business"
+                    class="card-image">
                 <h3>Data Acquisition</h3>
-                <p>We connect industrial assets through IoT protocols like LoRaWAN, OPC UA, and MQTT for real-time data collection.</p>
+                <p>We connect industrial assets through IoT protocols like LoRaWAN, OPC UA, and MQTT for real-time data
+                    collection.</p>
             </div>
-            
-            <!-- Service 2 -->
-            <div class="service-card glass-card">
-                <div class="icon">🔄</div>
+
+            <div class="card glass-card">
+                <img src="img/card2.webp" alt="Strategic Decisions with Precision & Confidence" class="card-image">
                 <h3>Data Organization</h3>
-                <p>We structure data using Unified Namespace and SQL, enabling integration between shop floor and enterprise systems.</p>
+                <p>We structure data using Unified Namespace and SQL, enabling integration between shop floor and
+                    enterprise systems.</p>
             </div>
-            
-            <!-- Service 3 -->
-            <div class="service-card glass-card">
-                <div class="icon">⚙️</div>
+
+
+            <div class="card glass-card">
+                <img src="img/card3.webp" alt="Sustainability & Profitability in Perfect Balance" class="card-image">
                 <h3>AI & Advanced Analytics</h3>
-                <p>We apply AI models, soft sensors, and MIMO analysis to drive predictive maintenance and operational insights.</p>
+                <p>We apply AI models, soft sensors, and MIMO analysis to drive predictive maintenance and operational
+                    insights.</p>
+
             </div>
-            
-            <!-- Service 4 -->
-            <div class="service-card glass-card">
-                <div class="icon">🌐</div>
+
+            <div class="card glass-card">
+                <img src="img/card4.jpg" alt="Sustainability & Profitability in Perfect Balance" class="card-image">
                 <h3>Data Visualization</h3>
-                <p>We deliver clear insights through Grafana, Power BI, and Digital Twins to monitor and optimize performance.</p>
+                <p>We deliver clear insights through Grafana, Power BI, and Digital Twins to monitor and optimize
+                    performance.</p>
+
             </div>
+
         </div>
-    </section>
 
-    <!-- Why Us Section -->
-    <section class="why-us">
-        <h2>Why Synapse AIOT?</h2>
-        <ul class="benefits-list">
-            <li>Deep expertise in factory automation</li>
-            <li>Scalable architecture using edge devices (Jetson, Advantech, Milesight)</li>
-            <li>Proven results in multinational factories</li>
-            <li>Focus on security, performance, and future-proofing</li>
-        </ul>
-    </section>
-
-    <!-- Industries Section -->
-    <section class="industries">
-        <h2>Industries We Serve</h2>
-        <div class="logo-carousel">
-            <div class="logo-item">Personal Care & Cosmetics</div>
-            <div class="logo-item">Food & Beverage</div>
-            <div class="logo-item">Pharmaceutical</div>
-            <div class="logo-item">Logistics & Packaging</div>
-        </div>
-    </section>
-
-    
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <h2>Let's bring your factory to the future.</h2>
-        <div class="contact-info">
-            <p>📧 contact@synapseaiot.com</p>
-            <p>📍 Based in Indiana, US, serving North & Latin America</p>
-        </div>
-        <form class="glass-form">
-            <input type="text" placeholder="Name" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+        <!-- What We Do Section
+        <section class="what-we-do">
+            <h2>Smart Solutions for Industry 4.0</h2>
+            <p>At Synapse AIOT, we deliver advanced technologies to transform your factory floor. From data-driven
+                decision
+                making to predictive maintenance, we provide end-to-end solutions tailored to your operations.</p>
 
 
-    <!-- JavaScript      
+
+            <div class="services-grid">
+                
+                <div class="service-card glass-card">
+                    <div class="icon">🧠</div>
+                    <h3>Data Acquisition</h3>
+                    <p>We connect industrial assets through IoT protocols like LoRaWAN, OPC UA, and MQTT for real-time
+                        data
+                        collection.</p>
+                </div>
+
+                
+                <div class="service-card glass-card">
+                    <div class="icon">🔄</div>
+                    <h3>Data Organization</h3>
+                    <p>We structure data using Unified Namespace and SQL, enabling integration between shop floor and
+                        enterprise systems.</p>
+                </div>
+
+                
+                <div class="service-card glass-card">
+                    <div class="icon">⚙️</div>
+                    <h3>AI & Advanced Analytics</h3>
+                    <p>We apply AI models, soft sensors, and MIMO analysis to drive predictive maintenance and
+                        operational
+                        insights.</p>
+                </div>
+
+                
+                <div class="service-card glass-card">
+                    <div class="icon">🌐</div>
+                    <h3>Data Visualization</h3>
+                    <p>We deliver clear insights through Grafana, Power BI, and Digital Twins to monitor and optimize
+                        performance.</p>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Why Us Section -->
+        <section class="why-us">
+            <h2>Why Synapse AIOT?</h2>
+            <ul class="benefits-list">
+                <li>Deep expertise in factory automation</li>
+                <li>Scalable architecture using edge devices (Jetson, Advantech, Milesight)</li>
+                <li>Proven results in multinational factories</li>
+                <li>Focus on security, performance, and future-proofing</li>
+            </ul>
+        </section>
+
+        <!-- Industries Section -->
+        <section class="industries">
+            <h2>Industries We Serve</h2>
+            <div class="logo-carousel">
+                <div class="logo-item">Personal Care & Cosmetics</div>
+                <div class="logo-item">Food & Beverage</div>
+                <div class="logo-item">Pharmaceutical</div>
+                <div class="logo-item">Logistics & Packaging</div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>Let's bring your factory to the future.</h2>
+            <div class="contact-info">
+                <p>📧 contact@synapseaiot.com</p>
+                <p>📍 Based in Indiana, US, serving North & Latin America</p>
+            </div>
+            <form class="glass-form">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+
+        <!-- JavaScript      
     <script>
         // Particles Background for Hero Section
         const canvas = document.getElementById('particles-js');
@@ -164,6 +233,7 @@
         
     </script> -->
 
-    <script src="script.js"></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
