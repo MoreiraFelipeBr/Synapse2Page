@@ -6,6 +6,9 @@
     <title>Our Services | Synapse AIOT</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="stylesheet" href="hero-style.css">
+
 </head>
 <body>
     <!-- Navigation -->
@@ -17,19 +20,15 @@
             </svg>
             Back to Home
         </a>
-        <div class="logo">Synapse AIOT</div>
+        <div class="hero-logo glass-container">
+            <img src="/img/logo-vert.png" alt="Synapse AIOT Logo" class="hero-logo-img">
+        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="glass-container">            
-        <h1>Our Advanced Industrial Solutions</h1>
-        <p>End-to-end technologies for Industry 4.0 transformation</p>
-    </section>
 
     <!-- Tabs Section -->
     <!-- Detailed Services Section -->
-    <section class="detailed-services">
+    <!-- <section class="detailed-services">
         <h2>Our Services</h2>
         <div class="tabs-container">
             <div class="tab-header">
@@ -73,6 +72,66 @@
                 <p><strong>Use case:</strong> Automate raw material delivery, finished goods transport, and internal logistics in real time</p>
             </div>
         </div>
+    </section> -->
+
+    <section id="services">
+        <h2>Our Services</h2>
+
+        <div class="services-container">
+            <img src="img/servico1-1200x675.webp"   alt="" class="service-image" data-slide data-slide-direction="left" data-slide-duration="1000" data-slide-delay="200">
+            <div class="service-description" data-slide data-slide-direction="rigth" data-slide-duration="1000" data-slide-delay="200">
+                <h3>🧠 Data Acquisition – Industrial IoT Integration</h3>
+                <p>We connect sensors, PLCs, and machines using industrial-grade protocols like LoRaWAN, OPC UA, and MQTT. Our plug-and-play approach enables fast and scalable data collection from field devices to the cloud.</p>
+                <p><strong>Typical devices:</strong> UC300, WISE-2410, LT-22222-L, Advantech gateways</p>
+                <p><strong>Result:</strong> Real-time data feeding MES, SCADA, and ERP systems</p>
+            </div>
+        </div>
+
+        <div class="service-container-reverse">
+            <img src="img/servico2-1200x675.webp" alt="" class="service-image">
+            <div class="service-description-reverse">
+                <h3>🔄 Data Organization – Unified Namespace & SQL Architecture</h3>
+                <p>We design Unified Namespace (UNS) structures where every asset, tag, and process follows a standardized model. Data flows through MQTT brokers (e.g., HiveMQ), then into SQL environments and enterprise platforms like SAP, MES, or WMS.</p>
+                <p><strong>Why it matters:</strong> UNS is the backbone of scalable IIoT and smart factory integration</p>
+            </div>
+        </div>
+
+        <div class="services-container">
+            <img src="img/servico3-1200x675.webp" alt="" class="service-image">
+            <div class="service-description">
+                <h3>⚙️ AI & Advanced Analytics – Predictive Maintenance & Soft Sensors</h3>
+                <p>We monitor variables like vibration, temperature, and motor current using AI/ML models—including soft sensors and MIMO analysis—to detect anomalies early. With Edge AI (e.g., Jetson Nano), local processing reduces cloud dependency.</p>
+                <p><strong>Tech stack:</strong> Jetson Nano, Milesight sensors, SQL Server, Grafana</p>
+                <p><strong>Use case:</strong> Reduce unplanned downtime, plan maintenance efficiently, and estimate hard-to-measure variables in real time</p>
+            </div>
+        </div>
+
+        <div class="service-container-reverse">
+            <img src="img/servico4-1200x675.webp" alt="" class="service-image">
+            <div class="service-description-reverse">
+                <h3>🌐 Data Visualization & Simulation – Digital Twin & Factory Analytics</h3>
+                <p>We build digital twins of production lines that mirror real-world performance and layout. Coupled with real-time dashboards using Grafana, Power BI, and Node-RED, we deliver live metrics like speed, uptime, OEE—even with incomplete data.</p>
+                <p><strong>Example metric:</strong> OEE = (Good Count / Planned Count) × Availability × Performance × Quality</p>
+                <p><strong>Use case:</strong> New line commissioning, live KPI monitoring, and simulation-based optimization</p>
+            </div>
+        </div>
+
+        <div class="services-container">
+            <img src="img/servico5-1200x675.webp" alt="" class="service-image">
+            <div class="service-description">
+                <h3>🌐 Data Visualization & Simulation – Digital Twin & Factory Analytics</h3>
+                <p>We build digital twins of production lines that mirror real-world performance and layout. Coupled with real-time dashboards using Grafana, Power BI, and Node-RED, we deliver live metrics like speed, uptime, OEE—even with incomplete data.</p>
+                <p><strong>Example metric:</strong> OEE = (Good Count / Planned Count) × Availability × Performance × Quality</p>
+                <p><strong>Use case:</strong> New line commissioning, live KPI monitoring, and simulation-based optimization</p>
+            </div>
+            
+            <div class="tab-content" id="agv-systems">
+                <h3>🚚 AGV Call-Off Systems</h3>
+                <p>Custom LoRa-based solutions that integrate pushbutton triggers, SQL logic, and SAP (or other fleet systems) to automate AGV tasks. Supports delivery, return, and exception flows.</p>
+                <p><strong>Use case:</strong> Automate raw material delivery, finished goods transport, and internal logistics in real time</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- Contact Section -->
@@ -89,6 +148,8 @@
             <button type="submit">Send</button>
         </form>
     </section>
+
+    
 
     <!-- Footer -->
     <footer>
