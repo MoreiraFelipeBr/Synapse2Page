@@ -1,13 +1,31 @@
 .header-section {
-    height: 90px;
+    /* height: 90px;
     display: flex;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     padding: 0 5%;
     overflow: hidden;
+    background: inherit;
+    z-index: 1000; */
+    
+    height: 90px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 5%;
+    overflow: hidden;
+    background: inherit;
+    z-index: 1000;
 }
 
-.tech-background {
+.tech-background-services {
     position: absolute;
     top: 0;
     left: 0;
@@ -39,7 +57,35 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    text-align: center;
 }
+
+.title{
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, white, var(--tech-cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+}
+
+.header-title-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+tohome {
+    margin-left: auto; 
+}
+.header-logo-img {
+    height: 70px;
+    width: auto;
+    margin-right: auto; /* Garante que fique à esquerda */
+}
+
+
 
 .hero-section p {
     font-size: 1.2rem;
@@ -51,17 +97,11 @@
 /*fim header*/
 
 
-.teste{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 section#services{
     padding: 20px 0;
-    margin: 20px auto;
+    margin: 95px auto 20px auto;
 }
 
 section#services h2{
