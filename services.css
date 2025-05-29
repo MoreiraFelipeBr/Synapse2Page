@@ -74,11 +74,19 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: 50px;
 }
 
-tohome {
-    margin-left: auto; 
+.tohome {
+    margin-left: 20px;
+    margin-top: 50px; 
 }
+.tohome h1 {
+    font-size: 1.2rem;
+    color: var(--tech-cyan);
+    text-decoration: none;
+}
+
 .header-logo-img {
     height: 70px;
     width: auto;
