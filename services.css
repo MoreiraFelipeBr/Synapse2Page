@@ -90,3 +90,14 @@ section#services h2{
     }
     
 }
+
+.service-image, 
+.service-description, 
+.service-description-reverse {
+    will-change: transform, opacity;
+}
+
+.services-container,
+.service-container-reverse {
+    overflow: hidden;
+}

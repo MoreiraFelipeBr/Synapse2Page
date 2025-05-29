@@ -428,6 +428,19 @@ h1, h2, h3, h4 {
     box-shadow: 0 10px 20px rgba(10, 102, 194, 0.3);
 }
 
+.contact-info a {
+    color: #007bff; /* Cor do link */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    transform: translateY(-2px);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .services-grid {
