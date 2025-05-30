@@ -81,7 +81,7 @@
     margin-left: 20px;
     margin-top: 50px; 
 }
-.tohome h1 {
+.tohome h1 a {
     font-size: 1.2rem;
     color: var(--tech-cyan);
     text-decoration: none;
