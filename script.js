@@ -155,5 +155,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         });
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const fadeElements = document.querySelectorAll('.fade-in');
+    
+         const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                
+                // Opcional: remover observação após a animação
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1, // Dispara quando 10% do elemento estiver visível
+        rootMargin: '0px 0px -50px 0px' // Ajuste fino: considera 50px antes de entrar na viewport
+    });
 
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+});
         
