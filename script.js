@@ -97,3 +97,63 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         });
+
+                // Configurações personalizáveis
+        const scrollConfig = {
+            duration: 1200,      // Duração em ms
+            easing: "easeInOutCubic",  // Curva de aceleração
+            offset: -20          // Offset vertical (ajuste fino)
+        };
+
+        // Função de easing personalizada
+        const easingFunctions = {
+            easeInOutCubic: t => t<.5 ? 4*t*t*t : 1-(( -2*t + 2)**3)/2
+        };
+
+        // Função principal de scroll suave
+        function smoothScroll(targetId) {
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            
+            const startPosition = window.pageYOffset;
+            const targetPosition = target.getBoundingClientRect().top + startPosition;
+            const distance = targetPosition - startPosition + scrollConfig.offset;
+            let startTime = null;
+            
+            // Função de animação
+            function animation(currentTime) {
+                if (!startTime) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const progress = Math.min(timeElapsed / scrollConfig.duration, 1);
+                
+                // Aplica easing
+                const easeProgress = easingFunctions[scrollConfig.easing](progress);
+                
+                window.scrollTo(0, startPosition + (distance * easeProgress));
+                
+                if (timeElapsed < scrollConfig.duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+            
+            requestAnimationFrame(animation);
+        }
+
+        // Configura os botões
+        document.querySelectorAll('button[data-target]').forEach(button => {
+            button.addEventListener('click', () => {
+                smoothScroll(button.getAttribute('data-target'));
+            });
+        });
+
+        // Scroll suave para âncoras
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                smoothScroll(targetId);
+            });
+        });
+
+
+        

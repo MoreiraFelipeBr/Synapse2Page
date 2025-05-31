@@ -1,16 +1,9 @@
+body {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
 .header-section {
-    /* height: 90px;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 0 5%;
-    overflow: hidden;
-    background: inherit;
-    z-index: 1000; */
-    
     height: 90px;
     display: flex;
     justify-content: space-between; 
@@ -209,6 +202,46 @@ section#services h3{
     
 }
 
+@media screen and (max-width: 900px) {
+    .header-section {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 2%;
+        min-height: 120px;
+    }
+    .header-logo-img {
+        height: 50px;
+        margin: 0 auto 10px auto;
+        display: block;
+    }
+    .header-title-container {
+        position: static;
+        transform: none;
+        margin-top: 0;
+        text-align: center;
+    }
+    .title {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    .tohome {
+        margin: 10px auto 0 auto;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-section {
+        padding: 8px 1%;
+    }
+    .title {
+        font-size: 1.3rem;
+    }
+    .header-logo-img {
+        height: 38px;
+    }
+}
+
 .service-image, 
 .service-description, 
 .service-description-reverse {
@@ -219,3 +252,4 @@ section#services h3{
 .service-container-reverse {
     overflow: hidden;
 }
+

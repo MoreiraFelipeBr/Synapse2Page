@@ -20,7 +20,7 @@
     <section class="hero-section">
 
         <div class="glass-container">
-            <h1>Empowering Smart Manufacturing with AI & IoT</h1>
+            <h1 class="title">Empowering Smart Manufacturing with AI & IoT</h1>
             <p>Unlock efficiency, predict downtime, and drive real-time decisions with Synapse AIOT's integrated
                 industrial solutions.</p>
 
@@ -49,7 +49,7 @@
 
         <div class="cards-container">
 
-            <div class="card glass-card">
+            <div class="card glass-card view">
                 <img src="img/card1.jpg" alt="Stay Ahead of Challenges and Future, Proof Your Business"
                     class="card-image">
                 <h3>Data Acquisition</h3>
@@ -57,7 +57,7 @@
                     collection.</p>
             </div>
 
-            <div class="card glass-card">
+            <div class="card glass-card view">
                 <img src="img/card2.webp" alt="Strategic Decisions with Precision & Confidence" class="card-image">
                 <h3>Data Organization</h3>
                 <p>We structure data using Unified Namespace and SQL, enabling integration between shop floor and
@@ -65,7 +65,7 @@
             </div>
 
 
-            <div class="card glass-card">
+            <div class="card glass-card view">
                 <img src="img/card3.webp" alt="Sustainability & Profitability in Perfect Balance" class="card-image">
                 <h3>AI & Advanced Analytics</h3>
                 <p>We apply AI models, soft sensors, and MIMO analysis to drive predictive maintenance and operational
@@ -73,7 +73,7 @@
 
             </div>
 
-            <div class="card glass-card">
+            <div class="card glass-card view">
                 <img src="img/card4.jpg" alt="Sustainability & Profitability in Perfect Balance" class="card-image">
                 <h3>Data Visualization</h3>
                 <p>We deliver clear insights through Grafana, Power BI, and Digital Twins to monitor and optimize
@@ -187,71 +187,8 @@
 </section>
 
 
-            <!-- JavaScript      
-    <script>
-        // Particles Background for Hero Section
-        const canvas = document.getElementById('particles-js');
-        const ctx = canvas.getContext('2d');
-        
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
-        const particles = [];
-        const particleCount = 100;
-        
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                size: Math.random() * 3 + 1,
-                speedX: Math.random() * 1 - 0.5,
-                speedY: Math.random() * 1 - 0.5,
-                color: `rgba(0, 209, 209, ${Math.random() * 0.5 + 0.1})`
-            });
-        }
-        
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < particles.length; i++) {
-                const p = particles[i];
-                
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fillStyle = p.color;
-                ctx.fill();
-                
-                p.x += p.speedX;
-                p.y += p.speedY;
-                
-                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-                
-                // Draw connecting lines
-                for (let j = i + 1; j < particles.length; j++) {
-                    const p2 = particles[j];
-                    const distance = Math.sqrt(Math.pow(p.x - p2.x, 2) + Math.pow(p.y - p2.y, 2));
-                    
-                    if (distance < 100) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 209, 209, ${1 - distance / 100})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
-                    }
-                }
-            }
-            
-            requestAnimationFrame(animateParticles);
-        }
-        
-        animateParticles();
-        
-        
-    </script> -->
-
             <script src="script.js"></script>
+            
 </body>
 
 </html>
