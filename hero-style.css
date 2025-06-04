@@ -72,14 +72,67 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 600px) {
     .hero-section h1 {
         font-size: 1.3rem;
+        display: grid;
+        row-gap: 5x;
+        column-gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            'logo logo'
+            'txt txt';
+
+    }
+
+
+    .container-grid {
+        grid-area: txt;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-logo-grid{
+        grid-area: logo;
+        
     }
     .hero-section .glass-container {
         padding: 1rem;
     }
     .hero-logo-img {
         width: 70vw;
+    }
+} */
+
+@media only screen and (max-width: 600px) {
+    .hero-section {
+        flex-direction: column;
+        justify-content: flex-start; /* Alinha os itens no topo */
+        padding-top: 2rem; /* Espaço no topo */
+    }
+    
+    .hero-section h1 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    /* Remove as propriedades de grid que não estão funcionando */
+    .container-grid {
+       margin-top: 5px;
+       padding-top: 0;
+        
+    }
+    
+    .hero-logo {
+        order: -1; /* Coloca o logo antes dos outros elementos */
+        margin-top: 0;
+        
+    }
+    
+    .hero-logo-img {
+        width: 70vw;
+    }
+    
+    .hero-section .glass-container {
+        padding: 1rem;
     }
 }
