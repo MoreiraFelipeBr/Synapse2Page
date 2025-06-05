@@ -46,3 +46,5 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.opacity = '1';
     }
 });
+
+

@@ -16,6 +16,13 @@
     overflow: hidden;
     background: inherit;
     z-index: 1000;
+    transition: top 0.3s;
+}
+
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 .tech-background-services {
@@ -30,7 +37,6 @@
 .hero-section .glass-container {
 
     align-items: center;
-
     max-width: 800px;
     padding: 3rem;
     position: relative;
@@ -210,37 +216,7 @@ section#services h3 {
 
 }
 
-@media screen and (max-width: 900px) {
-    .header-section {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 2%;
-        min-height: 120px;
-    }
 
-    .header-logo-img {
-        height: 50px;
-        margin: 0 auto 10px auto;
-        display: block;
-    }
-
-    .header-title-container {
-        position: static;
-        transform: none;
-        margin-top: 0;
-        text-align: center;
-    }
-
-    .title {
-        font-size: 2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .tohome {
-        margin: 10px auto 0 auto;
-        text-align: center;
-    }
-}
 
 /* @media screen and (max-width: 600px) {
 
@@ -262,7 +238,6 @@ section#services h3 {
 
 @media screen and (max-width: 600px) {
     .header-section {
-        height:  80px;
         display: grid;
         row-gap: 5x;
         column-gap: 10px;
@@ -309,9 +284,7 @@ section#services h3 {
 
     .tohome {
         grid-area: title;
-        /* margin: 0 0 5px 0;
         text-align: right;
-        order: 1;  */
     }
 
     .tohome h1 a {

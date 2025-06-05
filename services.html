@@ -19,8 +19,9 @@
 
 <body>
     <!-- Navigation -->
+    
 
-    <section class="header-section">
+    <header class="header-section" id="navbar">
         <img src="/img/logo-vert.png" alt="Synapse AIOT Logo" class="header-logo-img">
         
         <div class="header-title-container">
@@ -35,7 +36,7 @@
         <div class="tech-background-services">
             <canvas id="particles-js"></canvas>
         </div>
-    </section>
+    </header>
 
 
 
@@ -137,6 +138,18 @@
     </footer>
 
     <!-- JavaScript -->
+    <script>
+var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-100px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+</script>
     <script src="slideEffects.js"></script>
     <script src="script.js"></script>
 
